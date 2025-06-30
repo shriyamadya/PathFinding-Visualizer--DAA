@@ -24,3 +24,6 @@ This application supports the following algorithms:
 
 **Depth-first Search** (unweighted): DFS dives deep along one path before backtracking, ignoring better alternatives. It is fast and simple but poor for pathfinding, as it doesn’t prioritize the goal or track path cost. It rarely finds the shortest path and is mostly used for exploration, not optimal routing.
 
+###  Disclaimer
+This project is **inspired by** open-source work by Clément Mihailescu. Portions of logic and structure are derived from his base implementation under the MIT license.
+
