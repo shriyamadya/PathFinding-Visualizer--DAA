@@ -1,7 +1,7 @@
 {
   "name": "pathfinding_algorithms",
   "version": "1.0.0",
-  "description": "",
+  "description": "DAA pathfinding visualizer by Shriyam Adya Sharma , Shilpa G , Shreya TN",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",

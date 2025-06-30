@@ -1,7 +1,6 @@
 # Pathfinding Visualizer
 
-Welcome to Pathfinding Visualizer! I built this application because I was fascinated by pathfinding algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. You can access it here (use Google Chrome!): https://clementmihailescu.github.io/Pathfinding-Visualizer/
-
+Pathfinding is a fundamental problem in computer science and artificial intelligence. It involves finding the most efficient route from a starting point to a destination, especially in a grid or graph-based environment. This concept is widely used in applications such as GPS navigation, game development (NPC movement), robotics (obstacle avoidance), and network packet routing. This project focuses on the interactive visualization of multiple classic pathfinding algorithms, allowing users to observe the logical steps and decisions made by each algorithm as they search for the optimal path.
 ## Meet the Algorithms
 
 This application supports the following algorithms: 
