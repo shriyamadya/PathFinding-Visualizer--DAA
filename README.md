@@ -5,24 +5,22 @@ Pathfinding is a fundamental problem in computer science and artificial intellig
 
 This application supports the following algorithms: 
 
-**Dijkstra's Algorithm** (weighted): the father of pathfinding algorithms; guarantees the shortest path
+**Dijkstra's Algorithm** (weighted): Dijkstra’s Algorithm is a classic graph search that always finds the shortest path by exploring all possible paths in increasing order of cost. It does not use any heuristics and expands outward from the source like a wave. While accurate, it can be slow as it explores many unnecessary nodes. It works well on weighted grids and guarantees optimality.
 
-**A* Search** (weighted): arguably the best pathfinding algorithm; uses heuristics to guarantee the shortest path much faster than Dijkstra's Algorithm
 
-**Greedy Best-first Search** (weighted): a faster, more heuristic-heavy version of A*; does not guarantee the shortest path
+**A* Search** (weighted): A* Search is an efficient and optimal pathfinding algorithm that combines the cost from the start (g(n)) and an estimated cost to the goal (h(n)). It uses heuristics (like Manhattan distance) to guide the search, making it faster than Dijkstra’s. It balances exploration and goal direction and guarantees the shortest path if the heuristic is admissible.
 
-**Swarm Algorithm** (weighted): a mixture of Dijkstra's Algorithm and A*; does not guarantee the shortest-path
+**Greedy Best-first Search** (weighted): Greedy Best-First Search chooses nodes that appear closest to the goal based only on heuristics (h(n)), ignoring the actual path cost. It is fast and goal-driven but often skips over better paths, so it does not guarantee optimality. It’s useful when speed is more important than accuracy.
 
-**Convergent Swarm Algorithm** (weighted): the faster, more heuristic-heavy version of Swarm; does not guarantee the shortest path
+**Swarm Algorithm** (weighted): The Swarm Algorithm combines Dijkstra’s and A* by considering both cost and heuristic with an additional bias, creating a “swarming” movement toward the goal. It spreads widely before converging and looks organic in animation. While visually interesting, it doesn’t always find the shortest path.
 
-**Bidirectional Swarm Algorithm** (weighted): Swarm from both sides; does not guarantee the shortest path
+**Convergent Swarm Algorithm** (weighted): Convergent Swarm is a more aggressive, heuristic-heavy version of the Swarm Algorithm that moves faster toward the goal with less lateral exploration. It prioritizes direction over distance, reducing node visits. Though efficient, it trades off optimality for speed and visual compactness.
 
-**Breath-first Search** (unweighted): a great algorithm; guarantees the shortest path
+**Bidirectional Swarm Algorithm** (weighted): Bidirectional Swarm launches Swarm-like searches simultaneously from both the start and end nodes, meeting somewhere in the middle. This significantly reduces runtime on large grids. However, it does not guarantee the shortest path and might connect via suboptimal paths.
 
-**Depth-first Search** (unweighted): a very bad algorithm for pathfinding; does not guarantee the shortest path
 
-On top of the pathfinding algorithms listed above, I implemented a **Recursive Division** Maze Generation algorithm.
 
-## More about the Swarm Algorithm
+**Breath-first Search** (unweighted): BFS explores nodes level by level, ensuring the shortest path in unweighted grids. It does not use any heuristic and visits all neighbors before moving deeper. While accurate for simple grids, it becomes inefficient in larger or weighted scenarios.
 
-The Swarm Algorithm is an algorithm that I - at least presumably so (I was unable to find anything close to it online) - co-developed with a good friend and colleague, Hussein Farah. The algorithm is essentially a mixture of Dijkstra's Algorithm and A* Search; more precisely, while it converges to the target node like A* , it still explores quite a few neighboring nodes surrounding the start node like Dijkstra's. The algorithm differentiates itself from A* through its use of heuristics: it continually updates nodes' distance from the start node while taking into account their estimated distance from the target node. This effectively "balances" the difference in total distance between nodes closer to the start node and nodes closer to the target node, which results in the triangle-like shape of the Swarm Algorithm. We named the algorithm "Swarm" because one of its potential applications could be seen in a video-game where a character must keep track of a boss with high priority (the target node), all the while keeping tracking of neighboring enemies that might be swarming nearby. 
+**Depth-first Search** (unweighted): DFS dives deep along one path before backtracking, ignoring better alternatives. It is fast and simple but poor for pathfinding, as it doesn’t prioritize the goal or track path cost. It rarely finds the shortest path and is mostly used for exploration, not optimal routing.
+
